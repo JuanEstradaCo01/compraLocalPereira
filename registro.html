@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./css/estilos.css">
+    <title>Registro de Usuario</title>
+  </head>
+  <body>
+    <h1>Registrar Usuario</h1>
+    <input type="text" id="nombre" placeholder="Nombre" />
+    <br /><br />
+    <input type="text" id="apellido" placeholder="Apellido" />
+    <br /><br />
+    <input type="email" id="correo" placeholder="Correo electrónico" />
+    <br /><br />
+    <input type="password" id="password" placeholder="Contraseña" />
+    <br /><br />
+    <select id="rol">
+      <option value="">Seleccione un rol</option>
+      <option value="Administrador">Administrador</option>
+      <option value="Usuario">Usuario</option>
+    </select>
+    <br /><br />
+    <button onclick="registrarUsuario()">Registrar</button>
+    <p id="mensaje"></p>
+    <a href="login.html">Ya tengo una cuenta</a>
+    <script src="./js/registro.js"></script>
+  </body>
+</html>

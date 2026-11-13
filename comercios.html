@@ -1,0 +1,120 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Comercios</title>
+    <link rel="stylesheet" href="./css/estilos.css">
+    <script src="./js/comercios.js" defer></script>
+</head>
+<body class="comercios-body">
+
+    <main class="comercios-contenedor">
+        <header class="comercios-encabezado">
+            <div>
+                <p class="comercios-etiqueta">ADMINISTRACIÓN</p>
+                <h1 class="comercios-titulo">Gestión de Comercios</h1>
+                <p class="comercios-subtitulo">
+                    Administra tus comercios y sus respectivos inventarios.
+                </p>
+            </div>
+
+            <a class="comercios-boton comercios-boton-volver"
+               href="./dashboard.html">
+                Volver al inicio
+            </a>
+        </header>
+
+        <section class="comercios-tarjeta">
+            <h2 id="comercios-titulo-formulario" class="comercios-tarjeta-titulo">
+                Registrar comercio
+            </h2>
+
+            <form id="comercios-formulario">
+                <div class="comercios-formulario-grid">
+
+                    <div class="comercios-campo">
+                        <label for="comercios-nombre">Nombre del comercio *</label>
+                        <input id="comercios-nombre" type="text"
+                               maxlength="100" required>
+                    </div>
+
+                    <div class="comercios-campo">
+                        <label for="comercios-nit">NIT o identificación</label>
+                        <input id="comercios-nit" type="text" maxlength="30">
+                    </div>
+
+                    <div class="comercios-campo">
+                        <label for="comercios-telefono">Teléfono</label>
+                        <input id="comercios-telefono" type="tel" maxlength="30">
+                    </div>
+
+                    <div class="comercios-campo">
+                        <label for="comercios-correo">Correo electrónico</label>
+                        <input id="comercios-correo" type="email" maxlength="120">
+                    </div>
+
+                    <div class="comercios-campo comercios-campo-completo">
+                        <label for="comercios-direccion">Dirección</label>
+                        <input id="comercios-direccion" type="text" maxlength="150">
+                    </div>
+
+                    <div class="comercios-campo comercios-campo-completo">
+                        <label for="comercios-descripcion">Descripción</label>
+                        <textarea id="comercios-descripcion"
+                                  rows="3" maxlength="500"></textarea>
+                    </div>
+                </div>
+
+                <div class="comercios-acciones-formulario">
+                    <button type="submit" class="comercios-boton comercios-boton-guardar">
+                        Guardar comercio
+                    </button>
+
+                    <button type="button" id="comercios-cancelar"
+                            class="comercios-boton comercios-boton-cancelar"
+                            hidden>
+                        Cancelar edición
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section class="comercios-tarjeta">
+            <div class="comercios-lista-encabezado">
+                <div>
+                    <h2 class="comercios-tarjeta-titulo">Comercios registrados</h2>
+                    <p id="comercios-contador" class="comercios-subtitulo">
+                        Cargando comercios...
+                    </p>
+                </div>
+            </div>
+
+            <div class="comercios-filtros">
+                <input id="comercios-busqueda" type="search"
+                       placeholder="Buscar por nombre, NIT o correo...">
+            </div>
+
+            <div class="comercios-tabla-contenedor">
+                <table class="comercios-tabla">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Comercio</th>
+                            <th>NIT</th>
+                            <th>Teléfono</th>
+                            <th>Correo</th>
+                            <th>Dirección</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="comercios-tabla-cuerpo"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="./js/comercios.js"></script>
+</body>
+</html>

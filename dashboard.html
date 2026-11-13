@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./css/estilos.css" />
+    <title>Dashboard</title>
+  </head>
+
+  <body class="dashboard-page">
+    <!-- Navbar -->
+    <nav class="dashboard-navbar">
+      <div class="dashboard-navbar__brand">
+        <span class="dashboard-navbar__icon">D</span>
+        <h1 class="dashboard-navbar__title">Dashboard</h1>
+      </div>
+
+      <span class="dashboard-navbar__status">
+        Panel de administración
+      </span>
+    </nav>
+
+    <main class="dashboard-main">
+
+      <!-- Información del usuario -->
+      <section class="dashboard-user">
+        <div class="dashboard-user__avatar">U</div>
+
+        <div class="dashboard-user__info">
+          <p class="dashboard-user__eyebrow">
+            BIENVENIDO AL SISTEMA
+          </p>
+
+          <h2 id="bienvenida" class="dashboard-user__name"></h2>
+
+          <p id="rolUsuario" class="dashboard-user__role"></p>
+        </div>
+
+        <button
+          class="dashboard-user__logout"
+          onclick="cerrarSesion()"
+        >
+          Cerrar Sesión
+        </button>
+      </section>
+
+      <!-- Sección de módulos -->
+      <section class="dashboard-modules">
+        <div class="dashboard-modules__header">
+          <div>
+            <h2 class="dashboard-modules__title">
+              Módulos del sistema
+            </h2>
+
+            <p class="dashboard-modules__description">
+              Selecciona el módulo que deseas administrar.
+            </p>
+          </div>
+        </div>
+
+        <div class="dashboard-modules__grid">
+          <a
+            href="usuarios.html"
+            class="dashboard-card dashboard-card--users"
+          >
+            <div class="dashboard-card__icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="10" cy="7" r="4"/>
+                <path d="M20 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+
+            <h3 class="dashboard-card__title">
+              Gestión de usuarios
+            </h3>
+
+            <p class="dashboard-card__description">
+              Consulta, registra, edita y administra los usuarios
+              del sistema.
+            </p>
+
+            <span class="dashboard-card__link">
+              Ingresar al módulo <span>→</span>
+            </span>
+          </a>
+
+          <a
+            href="./comercios.html"
+            class="dashboard-card dashboard-card--products"
+          >
+            <div class="dashboard-card__icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="m12 3 9 5-9 5-9-5 9-5Z"/>
+                <path d="m3 12 9 5 9-5"/>
+                <path d="m3 16 9 5 9-5"/>
+              </svg>
+            </div>
+
+            <h3 class="dashboard-card__title">
+              Gestión de comercios
+            </h3>
+
+            <p class="dashboard-card__description">
+              Administra el catálogo de productos y mantén
+              organizada la información.
+            </p>
+
+            <span class="dashboard-card__link">
+              Ingresar al módulo <span>→</span>
+            </span>
+          </a>
+
+        </div>
+      </section>
+
+      <footer class="dashboard-footer">
+        <p>Panel de administración · Todos los derechos reservados</p>
+      </footer>
+
+    </main>
+
+    <script src="./js/sesion.js"></script>
+  </body>
+</html>

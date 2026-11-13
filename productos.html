@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/estilos.css" />
+    <title>Gestión de Productos</title>
+  </head>
+  <body>
+    <main class="productos-contenedor">
+      <header class="productos-encabezado">
+        <div class="productos-encabezado-info">
+          <h1 class="productos-titulo">Gestión de Productos</h1>
+          <p class="productos-subtitulo">
+            Administra el inventario de productos.
+          </p>
+        </div>
+        <a
+          class="comercios-boton comercios-boton-volver"
+          href="./comercios.html"
+        >
+          Volver
+        </a>
+      </header>
+
+      <section class="productos-tarjeta">
+        <h2 class="productos-tarjeta-titulo" id="productos-titulo-formulario">
+          Registrar producto
+        </h2>
+
+        <form id="productos-formulario">
+          <div class="productos-formulario-grid">
+            <div class="productos-campo">
+              <label for="productos-nombre">Nombre del producto</label>
+              <input
+                type="text"
+                id="productos-nombre"
+                maxlength="100"
+                placeholder="Nombre del producto"
+                required
+              />
+            </div>
+
+            <div class="productos-campo">
+              <label for="productos-categoria">Categoría</label>
+              <select id="productos-categoria" required>
+                <option value="Tecnología">Tecnología</option>
+                <option value="Accesorios">Accesorios</option>
+                <option value="Oficina">Oficina</option>
+                <option value="Hogar">Hogar</option>
+                <option value="Otros">Otros</option>
+              </select>
+            </div>
+
+            <div class="productos-campo">
+              <label for="productos-precio">Precio (COP)</label>
+              <input
+                type="number"
+                id="productos-precio"
+                min="0"
+                max="999999999999"
+                step="1"
+                placeholder="Ej. 85000"
+                required
+              />
+            </div>
+
+            <div class="productos-campo">
+              <label for="productos-stock">Cantidad disponible</label>
+              <input
+                type="number"
+                id="productos-stock"
+                min="0"
+                max="999999999"
+                step="1"
+                placeholder="Cantidad en inventario"
+                required
+              />
+            </div>
+
+            <div class="productos-campo">
+              <label for="productos-descripcion">Descripción</label>
+              <textarea
+                id="productos-descripcion"
+                maxlength="300"
+                placeholder="Descripción del producto"
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="productos-formulario-acciones">
+            <button
+              type="submit"
+              class="productos-boton productos-boton-guardar"
+            >
+              Guardar producto
+            </button>
+
+            <button
+              type="button"
+              class="productos-boton productos-boton-cancelar"
+              id="productos-cancelar"
+              hidden
+            >
+              Cancelar edición
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <section class="productos-tarjeta">
+        <h2 class="productos-tarjeta-titulo">Productos registrados</h2>
+
+        <div class="productos-filtros">
+          <input
+            type="search"
+            id="productos-busqueda"
+            placeholder="Buscar por nombre o descripción..."
+            aria-label="Buscar productos"
+          />
+
+          <select
+            id="productos-filtro-categoria"
+            aria-label="Filtrar por categoría"
+          >
+            <option value="">Todas las categorías</option>
+            <option value="Tecnología">Tecnología</option>
+            <option value="Accesorios">Accesorios</option>
+            <option value="Oficina">Oficina</option>
+            <option value="Hogar">Hogar</option>
+            <option value="Otros">Otros</option>
+          </select>
+        </div>
+
+        <p class="productos-contador" id="productos-contador"></p>
+
+        <div class="productos-tabla-contenedor">
+          <table class="productos-tabla">
+            <thead class="productos-tabla-encabezado">
+              <tr>
+                <th>ID</th>
+                <th>Producto</th>
+                <th>Categoría</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Estado</th>
+                <th>Descripción</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+
+            <tbody id="productos-tabla-cuerpo"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="./js/productos.js"></script>
+  </body>
+</html>
